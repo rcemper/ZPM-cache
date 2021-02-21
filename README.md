@@ -6,4 +6,4 @@ Steps taken so far:
 - load & compile adjusted classes > compiles with no errors   
 - to make ZPM command available run: %SYS>do ##class(%ZPM.PackageManager).Init()  
 - to init repository run: zpm: USER>repo -r -n registry -url https://pm.community.intersystems.com/ -user "" -pass ""   
-- next, search install, ... as kwnon. no errors  
+- next, search install, ... as well known. No errors  
