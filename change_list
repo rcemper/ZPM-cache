@@ -1,0 +1,56 @@
+#define FileTempDir ##class(%SYS.System).TempDirectory()_"/"_##class(%PopulateUtils).StringMin(8,8)
+2 - %ZPM.Installer
+1 - Test.PM.Unit.Archive
+1 - %ZPM.PackageManager.Developer.Lifecycle.Base
+1 - %ZPM.PackageManager.Developer.Lifecycle.Application
+1 - %ZPM.PackageManager
+
+replace %Storage.Persistent with %Library.CacheStorage  IRIS Compiler does the fix.
+- %ZPM.PackageManager.Server.Module
+- %ZPM.PackageManager.Server.Application
+- %ZPM.PackageManager.Developer.SystemRequirements
+- %ZPM.PackageManager.Developer.ResourceReference
+- %ZPM.PackageManager.Developer.Processor.Default.DeepSeeItem
+- %ZPM.PackageManager.Developer.ModuleTemplate
+- %ZPM.PackageManager.Developer.Module
+- %ZPM.PackageManager.Developer.MappingReference
+- %ZPM.PackageManager.Developer.InvokeReference
+- %ZPM.PackageManager.Developer.ErrorMessages.MessageFileStream
+- %ZPM.PackageManager.Developer.Document.ModuleStream
+- %ZPM.PackageManager.Client.ServerDefinition
+- %ZPM.PackageManager.Client.RemoteServerDefinition
+- %ZPM.PackageManager.Client.LocalServerDefinition
+- %ZPM.PackageManager.Client.FilesystemServerDefinition
+- %ZPM.PackageManager.Client.Filesystem.Cache
+
+replace %Storage.Serial with %Library.CacheSerialState  IRIS Compiler does the fix.
+- %ZPM.PackageManager.Developer.ModuleSetting.Default
+- %ZPM.PackageManager.Core.SemVer.Range
+- %ZPM.PackageManager.Core.SemVer.Comparator
+- %ZPM.PackageManager.Core.SemanticVersion
+- %ZPM.PackageManager.Core.SemanticVersionExpression
+
+replace %RawString with %ZPM.cache.RawString
+- %ZPM.PackageManager.Developer.Module
+- %ZPM.PackageManager.Core.ModuleReference
+- %ZPM.PackageManager.Developer.Document.AbstractStream
+
+added classes
+- %ZPM.cache.RawString
+- %ZPM.cache.Adaptor
+- %ZPM.cache.Generator
+- %ZPM.cache.Mapping
+- %ZPM.cache.MappingProperty
+- %ZPM.cache.PropertyParameters
+
+added includes
+- %ZPM.filetempdir.inc
+- %ZPM.cahe.inc
+
+Adjusted to use %ZPM.cache.*
+- %ZPM.JSON.Adaptor
+- %ZPM.JSON.Generator
+
+Extended for new classes and includes
+- module.xml
+- installer.cls
