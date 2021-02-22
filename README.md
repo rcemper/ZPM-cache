@@ -8,3 +8,5 @@ Steps taken so far:
 - to make ZPM command available run: %SYS>do ##class(%ZPM.PackageManager).Init()  
 - to init repository run: zpm: USER>repo -r -n registry -url https://pm.community.intersystems.com/ -user "" -pass ""   
 - next, search install, ... as well known. No errors  
+
+generating an install kit is not so obvious from code.  ???
