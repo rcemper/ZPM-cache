@@ -1,6 +1,7 @@
 It is work in progress  
 Steps taken so far:
-- added .inc to make $$$FileTempDir available  
+- added .inc to make $$$FileTempDir available 
+- edit all storage defnitions instead of %Storage...
 - patched %ZPM.Installer to use it  
 - load & compile %ZPM.Installer > creates a bunch of missing modules  
 - load & compile adjusted classes > compiles with no errors   
