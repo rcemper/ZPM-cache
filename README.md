@@ -52,7 +52,8 @@ and on vanilla __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 2
 and __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 215U) Mon Mar 30 2020 20:27:11 EDT__  
 
 There is a mismatch between Installer.cls and Module.xls   
-So it fails at import of .INC files actual workaround is simple   
+So it fails at import of .INC files.   
+But the actual workaround is simpler than module.xml   
 ~~~
 USER>zn "%SYS"
 ~~~ 
