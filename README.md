@@ -47,8 +47,8 @@ str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
 %SYS>
 ~~~
 
-# on a vanilla Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT  
-# and on vanilla IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT
+on a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT__     
+and on vanilla __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT__  
 
 There is a mismatch between Installer.cls and Module.xls   
 So it fails at import of .INC files actual workaround is simple   
