@@ -52,10 +52,10 @@ So it fails at import of .INC files actual workaround is simple
 ~~~
 USER>zn "%SYS"
  
-%SYS>do $system.OBJ.LoadDir("C:\GitHub\rcc\src\inc\_ZPM\","ck",,1)
+%SYS>do $system.OBJ.ImportDir("C:\GitHub\rcc\src\",,"ck",,1)
+    Compilation finished successfully in 4.098s.
      Load finished successfully.
-%SYS>do $system.OBJ.LoadDir("C:\GitHub\rcc\src\cls\_ZPM\","ck",,1)
-%SYS>do ##class(%ZPM.PackageManager).Init()
+ SYS>do ##class(%ZPM.PackageManager).Init()
      Initialized local cache.
      Reindexing %ZPM.PackageManager.Server.Module... done.
      Reindexing %ZPM.PackageManager.Server.Application... done.
