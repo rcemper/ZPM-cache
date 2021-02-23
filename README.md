@@ -15,4 +15,23 @@ generating an install kit is not so obvious from code.  ???
 create archive: s sc=##class(%ZPM.PackageManager.Developer.Archive).Create("C:\InterSystems\Cache184\mgr\rcc\src\","arch_cache.txt",.output)  
 output=0   sc=1
 
-
+make %ZPM.Installer
+~~~
+%SYS>s arch=##class(%Stream.FileBinary).%New()
+%SYS>Set sc=arch.LinkToFile("C:\InterSystems\Cache184\mgr\zpm_cache_arch.tgz")
+%SYS>zw
+arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
+sc=1
+%SYS>s str=##class(%Stream.TmpCharacter).%New()
+%SYS>s mk=##class(%ZPM.Installer).Make(arch,.str)
+Exporting to XML started on 02/23/2021 12:55:48
+Exporting class: %ZPM.Installer
+Export finished successfully.
+ 
+%SYS>zw
+arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
+mk=1
+sc=1
+str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
+%SYS>
+~~~
