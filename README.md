@@ -33,5 +33,13 @@ arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
 mk=1
 sc=1
 str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
+%SYS>s inst=##class(%Stream.FileCharacter).%New()
+%SYS>s sc=inst.FilenameSet("C:\GitHub\rcc\%Installer_cache.cls") zw sc
+sc=1
+%SYS>s sc=inst.CopyFromAndSave(str) zw
+arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
+inst=<OBJECT REFERENCE>[24@%Stream.FileCharacter]
+mk=1
+sc=1
+str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
 %SYS>
-~~~
