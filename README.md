@@ -1,5 +1,7 @@
-It is work in progress  
-Steps taken so far:
+It is an intersting exercise.  
+and it runs similar __for Caché and IRIS !__   
+
+Steps taken so far:  
 - added .inc to make $$$FileTempDir available 
 - edit all storage defnitions instead of %Storage...
 - patched %ZPM.Installer to use it  
@@ -45,7 +47,8 @@ str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
 %SYS>
 ~~~
 
-on a vanilla Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT  
+# on a vanilla Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT  
+# and on vanilla IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT
 
 There is a mismatch between Installer.cls and Module.xls   
 So it fails at import of .INC files actual workaround is simple   
