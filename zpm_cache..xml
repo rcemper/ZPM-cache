@@ -27587,7 +27587,7 @@ file data</Description>
 
 <Class name="%ZPM.cache.RawString">
 <Description>
-This is an internal datatype used to represent string values.</Description>
+This is an internal datatype used to  represent string values.</Description>
 <ClassType>datatype</ClassType>
 <System>1</System>
 <TimeCreated>65797,80046.923227</TimeCreated>
