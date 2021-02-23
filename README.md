@@ -49,16 +49,20 @@ str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
 
 on a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT__     
 and on vanilla __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT__  
+and __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 215U) Mon Mar 30 2020 20:27:11 EDT__  
 
 There is a mismatch between Installer.cls and Module.xls   
 So it fails at import of .INC files actual workaround is simple   
 ~~~
 USER>zn "%SYS"
- 
-%SYS>do $system.OBJ.ImportDir("C:\GitHub\rcc\src\",,"ck",,1)
-    Compilation finished successfully in 4.098s.
+~~~ 
+%SYS>__do $system.OBJ.ImportDir("C:\GitHub\rcc\src\",,"ck",,1)__  
+~~~
+      Compilation finished successfully in 4.098s.
      Load finished successfully.
- SYS>do ##class(%ZPM.PackageManager).Init()
+~~~
+SYS>__do ##class(%ZPM.PackageManager).Init()__  
+~~~
      Initialized local cache.
      Reindexing %ZPM.PackageManager.Server.Module... done.
      Reindexing %ZPM.PackageManager.Server.Application... done.
@@ -72,9 +76,11 @@ Value:
 Do you want to enable/update the 'ZPM' command? Yes => y
      Compiling routine : %ZLANGC00.mac
      Compiling routine : %ZLANGF00.mac
-%SYS>zpm
-zpm: %SYS>repo -r -n registry -url https://pm.community.intersystems.com/ -user "" -pass ""
-zpm: %SYS>search -r
+~~~
+%SYS>__zpm__  
+zpm: %SYS>__repo -r -n registry -url https://pm.community.intersystems.com/ -user "" -pass ""__  
+zpm: %SYS>__search -r__    
+~~~
 (Local Cache) Namespace-local module registry.:
  
 registry https://pm.community.intersystems.com/:
