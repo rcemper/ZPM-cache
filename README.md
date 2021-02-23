@@ -43,3 +43,40 @@ mk=1
 sc=1
 str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
 %SYS>
+~~~
+
+on a vanilla Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT  
+
+There is a mismatch between Installer.cls and Module.xls   
+So it fails at import of .INC files actual workaround is simple   
+~~~
+USER>zn "%SYS"
+ 
+%SYS>do $system.OBJ.LoadDir("C:\GitHub\rcc\src\inc\_ZPM\","ck",,1)
+     Load finished successfully.
+%SYS>do $system.OBJ.LoadDir("C:\GitHub\rcc\src\cls\_ZPM\","ck",,1)
+%SYS>do ##class(%ZPM.PackageManager).Init()
+     Initialized local cache.
+     Reindexing %ZPM.PackageManager.Server.Module... done.
+     Reindexing %ZPM.PackageManager.Server.Application... done.
+     Reindexing %ZPM.PackageManager.Client.Filesystem.Cache... done.
+Do you want to configure general package manager settings? No => y
+     UIFW Build Processes
+     PythonPath: Path to python.exe; required for UIFW build processes.
+Value:
+     PortableGitPath: Root path to Portable Git; required for UIFW build processes.
+Value:
+Do you want to enable/update the 'ZPM' command? Yes => y
+     Compiling routine : %ZLANGC00.mac
+     Compiling routine : %ZLANGF00.mac
+%SYS>zpm
+zpm: %SYS>repo -r -n registry -url https://pm.community.intersystems.com/ -user "" -pass ""
+zpm: %SYS>search -r
+(Local Cache) Namespace-local module registry.:
+ 
+registry https://pm.community.intersystems.com/:
+analyzethis                           1.1.4
+appmsw-telestat                       1.0.2 Repo: https://github.com/SergeyMi37/appmsw-telestat/
+appmsw-util                           1.0.1 Repo: https://github.com/SergeyMi37/appmsw-util/
+- - - -
+~~~
