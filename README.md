@@ -1,4 +1,4 @@
-It is an intersting exercise.  
+It is an interesting exercise.  
 and it runs similar __for Caché and IRIS !__   
 
 Steps taken so far:  
