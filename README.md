@@ -43,5 +43,5 @@ zpm: %SYS>search -r
      appmsw-telestat                       1.0.2 Repo: https://github.com/SergeyMi37/appmsw-telestat/
      appmsw-util                           1.0.1 Repo: https://github.com/SergeyMi37/appmsw-util/
 - - - -
-zpm: %SYS>quit   ; done
+zpm: %SYS>quit
 ~~~
