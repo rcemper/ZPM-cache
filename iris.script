@@ -1,0 +1,9 @@
+zn "%SYS"
+Do ##class(Security.Users).UnExpireUserPasswords("*")
+do $system.OBJ.ImportDir("/opt/irisapp/src/",,"ck",,1)
+do ##class(%ZPM.PackageManager).Init()
+No
+Yes
+zpm "repo -r -n registry -url https://pm.community.intersystems.com/ -user """" -pass """""
+zpm "repo -list"
+halt
