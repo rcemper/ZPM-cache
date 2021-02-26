@@ -1,4 +1,4 @@
-The ideas is to havea single code base that runs similar __for Caché and IRIS !__   
+The ideas is to have a single code base that runs similar __for Caché and IRIS !__   
 
 # Installation
 
