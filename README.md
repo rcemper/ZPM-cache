@@ -1,13 +1,15 @@
 The idea is to have a single code base that runs similar __for Caché and IRIS !__   
-
-# Installation
-
+# Installation 
 - clone this repository to local disk
+# Docker
+-from cloned project directory run __docker-compose up -d --build__  
+you get __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 215U) Mon Mar 30 2020 20:27:11 EDT__   
+# Windows
 - start a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT__   
 - or a vanilla  __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT__  
 - from Terminal run this steps:
 
-and __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 215U) Mon Mar 30 2020 20:27:11 EDT__  
+ 
 
 ~~~
 USER>zn "%SYS"   
