@@ -23,8 +23,8 @@ output=0   sc=1
 ~~~
 make %ZPM.Installer
 ~~~
-%SYS>s arch=##class(%Stream.FileBinary).%New()
-%SYS>Set sc=arch.LinkToFile("C:\InterSystems\Cache184\mgr\zpm_cache_arch.tgz")
+%SYS>set arch=##class(%Stream.FileBinary).%New()
+%SYS>set sc=arch.LinkToFile("C:\InterSystems\Cache184\mgr\zpm_cache_arch.tgz")
 %SYS>zw
 arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
 sc=1
