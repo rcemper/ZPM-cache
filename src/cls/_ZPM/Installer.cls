@@ -11,7 +11,7 @@ Parameter FILESCOUNT;
 
 /// Application Definition
 XData PM [ XMLNamespace = INSTALLER ]
-{
+{https://github.com/rcemper/ZPM-cache
 <Manifest>
 <Default Name="MODDIR" Dir="${MGRDIR}zpm" />
 <Default Name="SRCDIR" Dir="${MODDIR}src" />
@@ -19,9 +19,9 @@ XData PM [ XMLNamespace = INSTALLER ]
 <Default Name="TRACKINGID" Value="UA-126752118-1" />
 
 <Namespace Name="%SYS">
-  <Import File="${SRCDIR}inc/_ZPM/PackageManager/Common.inc" />
-  <Import File="${SRCDIR}inc/_ZPM/cache.inc" />
-  <Import File="${SRCDIR}inc/_ZPM/filetempdir.inc" />
+  <Import File="${SRCDIR}cls/_ZPM/PackageManager/Common.inc" />
+  <Import File="${SRCDIR}cls/_ZPM/cache.inc" />
+  <Import File="${SRCDIR}cls/_ZPM/filetempdir.inc" />
   <Import File="${SRCDIR}cls" Recurse="1" />
   
   <Invoke Class="%ZPM.PackageManager" Method="UpdateLanguageExtensions" CheckStatus="true" />
