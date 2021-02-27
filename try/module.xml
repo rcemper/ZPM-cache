@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-<Document name="zpm.ZPM"><Module>
+<Document name="zpm-cache.ZPM"><Module>
   <Name>ZPM</Name>
   <GlobalScope>true</GlobalScope>
   <Version>0.2.14-cache</Version>
@@ -31,17 +31,15 @@
     <Item Name="%ZPM.PackageManager.Developer.Build:SwitchToNamespace" Public="false" SubType="Method" Type="class"/>
     <Item Name="%ZPM.PackageManager.Developer.Build:InitializeNamespace" Public="false" SubType="Method" Type="class"/>
   </API>
-  <Resource Directory="inc" Name="%ZPM.PackageManager.Common.INC"/>
-  <Resource Directory="inc" Name="%ZPM.filetempdir.INC"/>
-  <Resource Directory="inc" Name="%ZPM.cache.INC"/>
+  <Resource Directory="cls" Name="%ZPM.PackageManager.Common.INC"/>
+  <Resource Directory="cls" Name="%ZPM.filetempdir.INC"/>
+  <Resource Directory="cls" Name="%ZPM.cache.INC"/>
   <Resource Directory="cls" Name="%ZPM.Utils.PKG"/>
   <Resource Directory="cls" Name="%ZPM.cache.PKG"/>
   <Resource Directory="cls" Name="%ZPM.JSON.PKG"/>
   <Resource Directory="cls" Name="%ZPM.AbstractInstaller.CLS"/>
   <Resource Directory="cls" Name="%ZPM.PackageManager.PKG"/>
   <Resource Directory="cls" Name="%ZPM.PackageManager.CLS"/>
-  <UnitTest Name="/tests/unit_tests/" Package="Test.PM.Unit" Phase="test" ProcessorClass="UnitTest"/>
-  <UnitTest Name="/tests/integration_tests/" Package="Test.PM.Integration" Phase="verify" ProcessorClass="UnitTest"/>
   <Resource Generated="true" Name="%ZLANGC00.MAC"/>
   <Resource Name="/doc/README.txt"/>
 </Module></Document></Export>
