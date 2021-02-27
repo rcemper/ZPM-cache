@@ -17,39 +17,22 @@ generating an install kit is not so obvious from code.  ???
 create archive: 
 ~~~
 USER>zn "%SYS"
-%SYS>set sourcedir="C:\GitHub\ZPM-cache\src\"
-%SYS>set archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
-%SYS>set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output)
-archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
-output=0
-sc=1
-sourcedir="C:\GitHub\ZPM-cache\src\"
+%SYS>
+set sourcedir="C:\GitHub\ZPM-cache\src\"
+set archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
+set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output)
 %SYS>
 ~~~
 make %ZPM.Installer
 ~~~
-%SYS>set arch=##class(%Stream.FileBinary).%New()
-%SYS>set sc=arch.LinkToFile(archfile)
-%SYS>zw
-arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
-sc=1
-%SYS>set str=##class(%Stream.TmpCharacter).%New()
-%SYS>set mk=##class(%ZPM.Installer).Make(arch,.str) zw
-Exporting to XML started on 02/23/2021 12:55:48
-Exporting class: %ZPM.Installer
-Export finished successfully.
-arch=<OBJECT REFERENCE>[3@%Stream.FileBinary]
-archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
-mk=1
-output=0
-sc=1
-sourcedir="C:\GitHub\ZPM-cache\src\"
-str=<OBJECT REFERENCE>[5@%Stream.TmpCharacter]
-%SYS>set inst=##class(%Stream.FileCharacter).%New()
-%SYS>set sc=inst.FilenameSet("C:\GitHub\ZPM-cache\%Installer_cache.cls")   
-%SYS>set sc=inst.CopyFromAndSave(str) zw sc
-sc=1
 %SYS>
+set arch=##class(%Stream.FileBinary).%New()
+set sc=arch.LinkToFile(archfile)
+set str=##class(%Stream.TmpCharacter).%New()
+set mk=##class(%ZPM.Installer).Make(arch,.str) zw
+set inst=##class(%Stream.FileCharacter).%New()
+set sc=inst.FilenameSet("C:\GitHub\ZPM-cache\%Installer_cache.cls")   
+set sc=inst.CopyFromAndSave(str) zw sc
 ~~~
 
 on a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT__     
