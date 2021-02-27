@@ -16,38 +16,39 @@ generating an install kit is not so obvious from code.  ???
 
 create archive: 
 ~~~
-set sourcedir="C:\GitHub\ZPM-cache\src\"
-set arcfile=C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
-set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output)  
-output=0   sc=1
+USER>zn "%SYS"
+%SYS>set sourcedir="C:\GitHub\ZPM-cache\src\"
+%SYS>set archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
+%SYS>set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output)
+archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
+output=0
+sc=1
+sourcedir="C:\GitHub\ZPM-cache\src\"
+%SYS>
 ~~~
 make %ZPM.Installer
 ~~~
 %SYS>set arch=##class(%Stream.FileBinary).%New()
-%SYS>set sc=arch.LinkToFile("C:\InterSystems\Cache184\mgr\zpm_cache_arch.tgz")
+%SYS>set sc=arch.LinkToFile(archfile)
 %SYS>zw
 arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
 sc=1
-%SYS>s str=##class(%Stream.TmpCharacter).%New()
-%SYS>s mk=##class(%ZPM.Installer).Make(arch,.str)
+%SYS>set str=##class(%Stream.TmpCharacter).%New()
+%SYS>set mk=##class(%ZPM.Installer).Make(arch,.str) zw
 Exporting to XML started on 02/23/2021 12:55:48
 Exporting class: %ZPM.Installer
 Export finished successfully.
- 
-%SYS>zw
-arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
+arch=<OBJECT REFERENCE>[3@%Stream.FileBinary]
+archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
 mk=1
+output=0
 sc=1
-str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
-%SYS>s inst=##class(%Stream.FileCharacter).%New()
-%SYS>s sc=inst.FilenameSet("C:\GitHub\rcc\%Installer_cache.cls") zw sc
+sourcedir="C:\GitHub\ZPM-cache\src\"
+str=<OBJECT REFERENCE>[5@%Stream.TmpCharacter]
+%SYS>set inst=##class(%Stream.FileCharacter).%New()
+%SYS>set sc=inst.FilenameSet("C:\GitHub\ZPM-cache\%Installer_cache.cls")   
+%SYS>set sc=inst.CopyFromAndSave(str) zw sc
 sc=1
-%SYS>s sc=inst.CopyFromAndSave(str) zw
-arch=<OBJECT REFERENCE>[525@%Stream.FileBinary]
-inst=<OBJECT REFERENCE>[24@%Stream.FileCharacter]
-mk=1
-sc=1
-str=<OBJECT REFERENCE>[523@%Stream.TmpCharacter]
 %SYS>
 ~~~
 
