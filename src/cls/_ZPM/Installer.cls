@@ -11,7 +11,7 @@ Parameter FILESCOUNT;
 
 /// Application Definition
 XData PM [ XMLNamespace = INSTALLER ]
-{https://github.com/rcemper/ZPM-cache
+{
 <Manifest>
 <Default Name="MODDIR" Dir="${MGRDIR}zpm" />
 <Default Name="SRCDIR" Dir="${MODDIR}src" />
@@ -158,7 +158,7 @@ ClassMethod Make(pPackage As %Stream.Object, ByRef pStream As %Stream.TmpCharact
     Do ..CompactPackage(.tList)
 
     Set param = ##class(%Dictionary.ParameterDefinition).%OpenId($CLASSNAME()_"||VERSION")
-    Set param.Default = tModule.VersionString
+    if $ISOBJECT(tModule) Set param.Default = tModule.VersionString
     Do param.%Save()
 
     Set param = ##class(%Dictionary.ParameterDefinition).%OpenId($CLASSNAME()_"||FILESCOUNT")
