@@ -56,8 +56,7 @@ on a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 20
 and on vanilla __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT__  
 and __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 215U) Mon Mar 30 2020 20:27:11 EDT__  
 
-There is a mismatch between Installer.cls and Module.xls   
-So it fails at import of .INC files.   
-But the actual workaround is simpler than module.xml  
+Compile of %ZPM.Installer.cls fails due to mismatsh in TEMP directory after copy   
+But the actual workaround is far simpler to understand 
 
 See README.md
