@@ -14,9 +14,13 @@ Steps taken so far:
 
 generating an install kit is not so obvious from code.  ???   
 
-create archive: s sc=##class(%ZPM.PackageManager.Developer.Archive).Create("C:\InterSystems\Cache184\mgr\rcc\src\","arch_cache.txt",.output)  
+create archive: 
+~~~
+set sourcedir="C:\GitHub\ZPM-cache\src\"
+set arcfile=C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
+set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output)  
 output=0   sc=1
-
+~~~
 make %ZPM.Installer
 ~~~
 %SYS>s arch=##class(%Stream.FileBinary).%New()
