@@ -12,34 +12,29 @@ Steps taken so far:
 - to init repository run: zpm: USER>repo -r -n registry -url https://pm.community.intersystems.com/ -user "" -pass ""   
 - next, search install, ... as well known. No errors  
 
-generating an install kit is not so obvious from code.  ???   
+generating an install kit is not so obvious from code. 
 
 create archive: 
 ~~~
 USER>zn "%SYS"
 %SYS>
-set sourcedir="C:\GitHub\ZPM-cache\src\"
+set sourcedir="C:\GitHub\ZPM-cache\zpm"
 set archfile="C:\GitHub\ZPM-cache\arch_zmp_cache.tgz"
-set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output)
+set sc=##class(%ZPM.PackageManager.Developer.Archive).Create(sourcedir,archfile,.output) zw sc
 %SYS>
 ~~~
-make %ZPM.Installer
+make Installer_Cache
 ~~~
 %SYS>
 set arch=##class(%Stream.FileBinary).%New()
 set sc=arch.LinkToFile(archfile)
 set str=##class(%Stream.TmpCharacter).%New()
-set mk=##class(%ZPM.Installer).Make(arch,.str) zw
+set mk=##class(%ZPM.Installer).Make(arch,.str) zw mk,sc
+
 set inst=##class(%Stream.FileCharacter).%New()
-set sc=inst.FilenameSet("C:\GitHub\ZPM-cache\%Installer_cache.cls")   
+set sc=inst.FilenameSet("C:\GitHub\ZPM-cache\Installer.cls")   
 set sc=inst.CopyFromAndSave(str) zw sc
 ~~~
 
-on a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT__     
-and on vanilla __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT__  
-and __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2020.1 (Build 215U) Mon Mar 30 2020 20:27:11 EDT__  
+Adjust module.xml for new parts.
 
-Compile of %ZPM.Installer.cls fails due to mismatsh in TEMP directory after copy   
-But the actual workaround is far simpler to understand 
-
-See README.md
