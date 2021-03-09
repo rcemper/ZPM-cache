@@ -17,7 +17,7 @@ Version used for autoinstall release</Description>
 <Parameter name="FILESCOUNT">
 <Description>
 Number of files for autoinstall release</Description>
-<Default>113</Default>
+<Default>112</Default>
 </Parameter>
 
 <XData name="PM">
@@ -284,7 +284,7 @@ Check currently installed version, if any</Description>
 
   Set pFolder = ##class(%File).NormalizeDirectory($$$FileTempDir)
 
-  For i=1:1:4,6:1:..#FILESCOUNT {
+  For i=1:1:..#FILESCOUNT {
     Set xdata = ##class(%Dictionary.XDataDefinition).%OpenId($CLASSNAME()_"||Data"_i)
     Set name = xdata.Description
     Set fileName = pFolder_name

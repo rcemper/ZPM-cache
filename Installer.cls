@@ -232,7 +232,7 @@ ClassMethod ExtractPackage(Output pFolder As %String) As %String
 
   Set pFolder = ##class(%File).NormalizeDirectory($$$FileTempDir)
 
-  For i=1:1:4,6:1:..#FILESCOUNT {
+  For i=1:1:..#FILESCOUNT {
     Set xdata = ##class(%Dictionary.XDataDefinition).%OpenId($CLASSNAME()_"||Data"_i)
     Set name = xdata.Description
     Set fileName = pFolder_name
