@@ -1,4 +1,4 @@
-The idea is to have a single code base that runs similar __for Caché and IRIS !__   
+The idea is to have a single code base that runs similar __for Caché and IRIS !__     
 # Installation 
 - clone this repository to local disk
 # Docker
@@ -9,9 +9,11 @@ you get __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 20201 (Build 2
 - start a vanilla __Caché for Windows (x86-64) 2018.1.4 (Build 505_1U) Thu May 28 2020 10:01:40 EDT__   
 - or a vanilla  __IRIS for Windows (x86-64) 2020.1 (Build 215U) Mon Mar 30 2020 20:14:33 EDT__  
 
-There is a fast and a detailed variant:
+There is a fast and a detailed variant:    
+  
 __Fast install:__     
-- load and compile Installer.xml from cloned repositora and your done  
+- load and compile Installer.xml from cloned repositora and your done    
+    
 __Detailed install:__
 - from Terminal run this steps:
 ~~~
