@@ -12,7 +12,7 @@ you get __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 20201 (Build 2
 ~~~
 USER>zn "%SYS"   
 
-%SYS>set dir="C:\GitHub\ZPM-cache\src\" ; your downloaded project directory   
+%SYS>set dir="C:\GitHub\ZPM-cache\zpm\" ; your downloaded project directory   
 
 %SYS>do $system.OBJ.ImportDir(dir,,"ck",,1)  ; load & compile ZPM
      Load of directory started on 02/26/2021 19:08:44
