@@ -7,7 +7,7 @@ Projection Reference As Installer;
 Parameter VERSION = "0.2.14-cache";
 
 /// Number of files for autoinstall release
-Parameter FILESCOUNT = 113;
+Parameter FILESCOUNT = 112;
 
 /// Application Definition
 XData PM [ XMLNamespace = INSTALLER ]
@@ -29,10 +29,13 @@ XData PM [ XMLNamespace = INSTALLER ]
     <Arg Value="${REGISTRY}"/> 
     <Arg Value="${TRACKINGID}"/>
   </Invoke>
-  <Invoke Class="%ZPM.Installer" Method="ZPMLoad" CheckStatus="true">
+  
+  <!-- the next steps require preparation by Dockerfile -->
+  <!--Invoke Class="%ZPM.Installer" Method="ZPMLoad" CheckStatus="true">
     <Arg Value="${MODDIR}"/>
   </Invoke>
-  <Invoke Class="%ZPM.Installer" Method="ZPMCompile" CheckStatus="true"/>
+  <Invoke Class="%ZPM.Installer" Method="ZPMCompile" CheckStatus="true"/-->
+  
 </Namespace>
 
 </Manifest>
@@ -231,8 +234,11 @@ ClassMethod ExtractPackage(Output pFolder As %String) As %String
 #define FileTempDir ##class(%SYS.System).TempDirectory()_"/"_##class(%PopulateUtils).StringMin(8,8)
 
   Set pFolder = ##class(%File).NormalizeDirectory($$$FileTempDir)
-
-  For i=1:1:..#FILESCOUNT {
+#;  
+#; skip self oberloading by XData Block 5
+#;For i=1:1:..#FILESCOUNT {
+#;
+  For i=1:1:4,6:1:..#FILESCOUNT {
     Set xdata = ##class(%Dictionary.XDataDefinition).%OpenId($CLASSNAME()_"||Data"_i)
     Set name = xdata.Description
     Set fileName = pFolder_name

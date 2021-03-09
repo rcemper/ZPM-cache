@@ -41,11 +41,14 @@ Application Definition</Description>
   <Invoke Class="%ZPM.Installer" Method="ZPMInit" CheckStatus="true">
     <Arg Value="${REGISTRY}"/> 
     <Arg Value="${TRACKINGID}"/>
-  </Invoke>
-  <Invoke Class="%ZPM.Installer" Method="ZPMLoad" CheckStatus="true">
+</Invoke>
+  
+  <!-- the next steps require preparation by Dockerfile -->
+  <!--Invoke Class="%ZPM.Installer" Method="ZPMLoad" CheckStatus="true">
     <Arg Value="${MODDIR}"/>
   </Invoke>
-  <Invoke Class="%ZPM.Installer" Method="ZPMCompile" CheckStatus="true"/>
+  <Invoke Class="%ZPM.Installer" Method="ZPMCompile" CheckStatus="true"/-->
+  
 </Namespace>
 
 </Manifest>
@@ -283,8 +286,11 @@ Check currently installed version, if any</Description>
 #define FileTempDir ##class(%SYS.System).TempDirectory()_"/"_##class(%PopulateUtils).StringMin(8,8)
 
   Set pFolder = ##class(%File).NormalizeDirectory($$$FileTempDir)
-
-  For i=1:1:..#FILESCOUNT {
+#;  
+#; skip self oberloading by XData Block 5
+#;For i=1:1:..#FILESCOUNT {
+#;
+  For i=1:1:4,6:1:..#FILESCOUNT {
     Set xdata = ##class(%Dictionary.XDataDefinition).%OpenId($CLASSNAME()_"||Data"_i)
     Set name = xdata.Description
     Set fileName = pFolder_name
