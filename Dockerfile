@@ -1,4 +1,5 @@
-ARG BASE=store/intersystems/iris-community:2020.1.0.215.0
+# ARG BASE=store/intersystems/iris-community:2020.1.0.215.0
+ARG BASE=containers.intersystems.com/intersystems/iris-ml:2020.3.0.304.0
 FROM ${BASE}
 
 USER root   
