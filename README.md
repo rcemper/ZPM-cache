@@ -12,7 +12,7 @@ you get __IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 20201 (Build 2
 There is a fast and a detailed variant:    
   
 __Fast install:__     
-- load and compile Installer.xml from cloned repositora and your done    
+- load and compile cacheInstaller.xml from cloned repository and you are done    
     
 __Detailed install:__
 - from Terminal run this steps:
