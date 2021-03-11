@@ -49,4 +49,4 @@ Extended
 - %ZPM.JSON.Adaptor
 - %ZPM.JSON.Generator
 - module.xml
-- installer.cls
+- Installer.cls
