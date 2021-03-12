@@ -1,6 +1,5 @@
 #define FileTempDir ##class(%SYS.System).TempDirectory()_"/"_##class(%PopulateUtils).StringMin(8,8)
 2 - %ZPM.Installer
-1 - Test.PM.Unit.Archive
 1 - %ZPM.PackageManager.Developer.Lifecycle.Base
 1 - %ZPM.PackageManager.Developer.Lifecycle.Application
 1 - %ZPM.PackageManager
