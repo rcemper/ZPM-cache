@@ -2,6 +2,9 @@ Exporting class: %ZPM.AbstractInstaller
 Exporting class: %ZPM.Installer
 Exporting class: %ZPM.JSON.Adaptor
 Exporting class: %ZPM.JSON.Generator
+Exporting class: %ZPM.JSON.Mapping
+Exporting class: %ZPM.JSON.MappingProperty
+Exporting class: %ZPM.JSON.PropertyParameters
 Exporting class: %ZPM.PackageManager.Client.Filesystem.Cache
 Exporting class: %ZPM.PackageManager.Client.Filesystem.PackageService
 Exporting class: %ZPM.PackageManager.Client.FilesystemServerDefinition
@@ -105,11 +108,6 @@ Exporting class: %ZPM.PackageManager.Server.SemVerIndex
 Exporting class: %ZPM.PackageManager.Server.Utils
 Exporting class: %ZPM.PackageManager
 Exporting class: %ZPM.Utils.FileBinaryTar
-Exporting class: %ZPM.cache.Adaptor
-Exporting class: %ZPM.cache.Generator
 Exporting routine: %ZPM.cache.INC
-Exporting class: %ZPM.cache.Mapping
-Exporting class: %ZPM.cache.MappingProperty
-Exporting class: %ZPM.cache.PropertyParameters
 Exporting class: %ZPM.cache.RawString
 Exporting routine: %ZPM.filetempdir.INC
